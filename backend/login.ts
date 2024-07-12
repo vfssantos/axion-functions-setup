@@ -1,5 +1,5 @@
 // backend/login.ts
-export const POST = ({ username, password }) => {
+export const GET = ({ username, password }) => {
   if (username === "user" && password === "password") {
     return { status: "success", token: "mock-token" };
   } else {
