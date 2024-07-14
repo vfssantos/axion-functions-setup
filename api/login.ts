@@ -12,9 +12,9 @@ export const POST = async ({ username, password }) => {
   const user = users.find((u) => u.username === username && u.password === password);
 
   if (!user) {
-    throw { status: 401, body: { message: "Invalid username or password" } };
+    throw { status: 401, message: "Invalid username or password" } ;
   }
 
   const jwt = await create({ alg: "HS512", typ: "JWT" }, { username }, key);
-  return { status: 200, body: { token: jwt } };
+  return { token: jwt } ;
 };
